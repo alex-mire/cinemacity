@@ -1,4 +1,4 @@
-package com.example.cinemacity.domain.tickets;
+package com.example.cinemacity.domain.movies.tickets;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,10 +20,13 @@ public class Tickets {
     @Column(name = "price", nullable = false)
     private String price;
 
-    @Column(name = "row", nullable = false)
-    private String row;
+    @Column(name = "rowNumber", nullable = false)
+    private String rowNumber;
 
-    @Column(name = "seat", nullable = false)
-    private String seat;
+    @Column(name = "seatNumber", nullable = false)
+    private String seatNumber;
+
+    @Column(name = "cinema_room_no", nullable = false)
+    private String cinemaRoomNo;
 
 }

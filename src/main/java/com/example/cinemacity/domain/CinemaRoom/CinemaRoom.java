@@ -3,10 +3,7 @@ package com.example.cinemacity.domain.CinemaRoom;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -14,14 +11,15 @@ import javax.persistence.Table;
 @Table(name="cinema_room")
 public class CinemaRoom {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name="room_number", nullable = false)
-    private String roomNumber;
+    private Integer roomNumber;
 
-    @Column(name="room_rows", nullable = false)
-    private String room_rows;
+    @Column(name="rows_number", nullable = false)
+    private Integer rowsNumber;
 
     @Column(name="seats_number")
-    private String seats_number;
+    private Integer seatsNumber;
 }
