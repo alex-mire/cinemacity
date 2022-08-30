@@ -11,15 +11,15 @@ import javax.persistence.*;
 @Table(name="cinema_room")
 public class CinemaRoom {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Column(name="room_number", nullable = false)
-    private Integer roomNumber;
+    private int roomNumber;
 
     @Column(name="rows_number", nullable = false)
-    private Integer rowsNumber;
+    private int rowsNumber;
 
     @Column(name="seats_number")
-    private Integer seatsNumber;
+    private int seatsNumber;
 }

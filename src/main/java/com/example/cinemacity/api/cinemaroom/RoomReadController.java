@@ -21,8 +21,8 @@ public class RoomReadController {
     final CinemaRoomRepository cinemaRoomRepository;
 
     @GetMapping("/{id}")
-    public CinemaRoomDto getById(@PathVariable String id){
-        return cinemaRoomRepository.findCinemaRoomById(id)
+    public CinemaRoomDto getById(@PathVariable Long id){
+        return cinemaRoomRepository.findCinemaRoomDtoById(id)
                 .orElseThrow(() -> new BadRequestException("Sala de cinema nu a fost identificata!"));
     }
 

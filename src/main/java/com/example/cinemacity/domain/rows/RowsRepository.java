@@ -13,4 +13,6 @@ public interface RowsRepository extends JpaRepository<Rows, String> {
 
     List<Rows> findAllByCinemaRoomNumber(Integer cinemaRoomId);
 
+    Optional<Rows> findById(Long id);
+
 }

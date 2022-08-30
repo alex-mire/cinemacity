@@ -10,8 +10,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SeatDto {
-    private Integer cinemaRoomNumber;
-    private Integer rowNumber;
-    private Integer seatsNumber;
+    private int cinemaRoomNumber;
+    private int rowNumber;
+    private int seatsNumber;
 
 }

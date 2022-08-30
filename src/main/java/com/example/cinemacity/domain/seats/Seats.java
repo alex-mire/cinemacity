@@ -12,17 +12,17 @@ import javax.persistence.*;
 public class Seats {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     @Column(name="row_number", nullable = false)
-    private Integer rowNumber;
+    private int rowNumber;
 
     @Column(name="seat_number", nullable = false)
-    private Integer seatNumber;
+    private int seatNumber;
 
     @Column(name="cinema_room_number", nullable = false)
-    private Integer cinemaRoomNumber;
+    private int cinemaRoomNumber;
 
     @Column(name="available")
-    private Boolean available;
+    private boolean available;
 }

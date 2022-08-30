@@ -1,4 +1,4 @@
-package com.example.cinemacity.domain.movies.tickets;
+package com.example.cinemacity.domain.tickets;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

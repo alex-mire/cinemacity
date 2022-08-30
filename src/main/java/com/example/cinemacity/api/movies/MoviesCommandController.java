@@ -7,10 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 
@@ -20,17 +17,21 @@ import javax.transaction.Transactional;
 @AllArgsConstructor
 public class MoviesCommandController {
 
-    final MoviesRepository moviesRepository;
+    final MoviesService moviesService;
 
     @PostMapping(value = "/add", consumes = {"application/json"})
     public ResponseEntity<String> add(@RequestBody MoviesDto moviesDto) {
+        return moviesService.addMovie(moviesDto);
 
-        Movies movies = new Movies();
-        BeanUtils.copyProperties(moviesDto, movies);
+    }
 
-        moviesRepository.save(movies);
+    @PatchMapping(value = "/edit/{id}", consumes = {"application/json"})
+    public ResponseEntity<String> edit(@PathVariable Long id, @RequestBody MoviesDto moviesDto) {
+        return moviesService.editMovie(id, moviesDto);
+    }
 
-        return new ResponseEntity<>("Movie added with succes!", HttpStatus.OK);
-
+    @DeleteMapping(value = "/delete/{id}", consumes = {"application/json"})
+    public ResponseEntity<String> edit(@PathVariable Long id) {
+        return moviesService.deleteMovie(id);
     }
 }

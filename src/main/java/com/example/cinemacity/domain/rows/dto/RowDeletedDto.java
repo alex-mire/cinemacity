@@ -1,16 +1,11 @@
 package com.example.cinemacity.domain.rows.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-public class RowsDto {
+public class RowDeletedDto {
     private int cinemaRoomNumber;
     private int rowNumber;
-    private int seatsNumber;
 }
